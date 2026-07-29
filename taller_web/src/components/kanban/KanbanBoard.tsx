@@ -7,7 +7,7 @@ import { RefreshCw, AlertCircle, Activity, Clock } from 'lucide-react';
 
 export function KanbanBoard() {
   const { ordenesPorEstado, loading, error, cambiarEstado, refetch } = useOrdenesTrabajo();
-  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {

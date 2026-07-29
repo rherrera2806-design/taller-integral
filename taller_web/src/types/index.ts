@@ -124,6 +124,7 @@ export interface HistorialVehiculo {
   total: number;
   productos_aplicados: DetalleOT[];
   servicios_aplicados: DetalleOT[];
+  vehiculo?: Vehiculo;
 }
 
 export type EstadoOT = 'RECIBIDO' | 'EN_PROCESO' | 'CONTROL_CALIDAD' | 'LISTO' | 'ENTREGADO';
