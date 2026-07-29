@@ -7,6 +7,7 @@ import ordenTrabajoRoutes from './routes/ordenTrabajoRoutes';
 import cotizacionRoutes from './routes/cotizacionRoutes';
 import vehiculoRoutes from './routes/vehiculoRoutes';
 import inventarioRoutes from './routes/inventarioRoutes';
+import clienteRoutes from './routes/clienteRoutes';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ app.use('/api/ot', ordenTrabajoRoutes);
 app.use('/api/cotizaciones', cotizacionRoutes);
 app.use('/api/vehiculos', vehiculoRoutes);
 app.use('/api/inventario', inventarioRoutes);
+app.use('/api/clientes', clienteRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'API Taller funcionando correctamente' });
