@@ -25,13 +25,13 @@ Sistema completo para la gestión de talleres automotrices que integra:
 - Vistas para consultas comunes
 - Datos de ejemplo incluidos
 
-## Deploy en Render
+## Deploy en Railway
 
 Ver la guía completa en `taller_api/DEPLOY.md`
 
 ### URLs de Producción
-- **Frontend**: https://taller-web.onrender.com
-- **Backend API**: https://taller-api.onrender.com/api
+- **Frontend**: https://taller-web.up.railway.app
+- **Backend API**: https://taller-api.up.railway.app/api
 
 ## Desarrollo Local
 
