@@ -1,4 +1,14 @@
 import dns from 'dns';
+import net from 'net';
+
+const originalConnect = net.Socket.prototype.connect;
+net.Socket.prototype.connect = function(this: any, ...args: any[]) {
+  if (typeof args[0] === 'object' && args[0]) {
+    args[0].family = 4;
+  }
+  return originalConnect.apply(this, args);
+};
+
 dns.setDefaultResultOrder('ipv4first');
 
 import express from 'express';
