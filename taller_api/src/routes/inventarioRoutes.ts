@@ -1,11 +1,12 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
 import productoController from '../controllers/productoController';
+import productoService from '../services/productoService';
 
 const router = Router();
 
 router.get('/alertas', productoController.getAlertasStockBajo);
 
-router.post('/descontar-stock', async (req, res) => {
+router.post('/descontar-stock', async (req: Request, res: Response) => {
   try {
     const { producto_id, cantidad } = req.body;
 
@@ -16,7 +17,6 @@ router.post('/descontar-stock', async (req, res) => {
       });
     }
 
-    const productoService = require('../services/productoService').default;
     const descontado = await productoService.descontarStock(producto_id, cantidad);
     
     res.json({
@@ -32,7 +32,7 @@ router.post('/descontar-stock', async (req, res) => {
   }
 });
 
-router.post('/incrementar-stock', async (req, res) => {
+router.post('/incrementar-stock', async (req: Request, res: Response) => {
   try {
     const { producto_id, cantidad } = req.body;
 
@@ -43,7 +43,6 @@ router.post('/incrementar-stock', async (req, res) => {
       });
     }
 
-    const productoService = require('../services/productoService').default;
     const incrementado = await productoService.incrementarStock(producto_id, cantidad);
     
     res.json({
