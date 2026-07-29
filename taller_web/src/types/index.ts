@@ -32,6 +32,7 @@ export interface Producto {
   precio_costo: number;
   precio_venta: number;
   unidad_medida?: string;
+  proveedor?: string;
 }
 
 export interface Servicio {
@@ -134,6 +135,7 @@ export const ESTADO_COLORS: Record<EstadoOT, string> = {
   EN_PROCESO: 'bg-yellow-100 text-yellow-800 border-yellow-200',
   CONTROL_CALIDAD: 'bg-purple-100 text-purple-800 border-purple-200',
   LISTO: 'bg-green-100 text-green-800 border-green-200',
+  ENTREGADO: 'bg-gray-100 text-gray-800 border-gray-200',
 };
 
 export const CATEGORIA_SERVICIO_COLORS: Record<string, string> = {

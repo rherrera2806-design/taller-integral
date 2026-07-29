@@ -49,6 +49,11 @@ export function KanbanBoard() {
       description: 'Para entregar',
       icon: <RefreshCw size={16} />
     },
+    ENTREGADO: { 
+      title: 'Entregado', 
+      description: 'Vehículo entregado',
+      icon: <RefreshCw size={16} />
+    },
   };
 
   const totalOTs = Object.values(ordenesPorEstado).reduce((sum, ots) => sum + ots.length, 0);
