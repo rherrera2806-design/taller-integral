@@ -12,13 +12,13 @@ const pool = new Pool({
   password: process.env.DB_PASSWORD || 'taller123',
   max: 20,
   idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  connectionTimeoutMillis: 5000,
   ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
+  family: 4,
 });
 
 pool.on('error', (err) => {
   console.error('Error inesperado en el pool de conexiones:', err);
-  process.exit(-1);
 });
 
 export default pool;
