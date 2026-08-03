@@ -20,7 +20,7 @@ let pool: Pool;
 
 if (process.env.DATABASE_URL) {
   const url = new URL(process.env.DATABASE_URL);
-  const config: PoolConfig = {
+  const config: PoolConfig & { lookup?: any } = {
     host: url.hostname,
     port: parseInt(url.port || '5432'),
     database: url.pathname.slice(1),
@@ -30,7 +30,7 @@ if (process.env.DATABASE_URL) {
     idleTimeoutMillis: 30000,
     connectionTimeoutMillis: 10000,
     ssl: { rejectUnauthorized: false },
-    lookup: ipv4Lookup as any,
+    lookup: ipv4Lookup,
   };
   pool = new Pool(config);
 } else {

@@ -4,7 +4,7 @@
   "description": "API Backend para Sistema Integral de Taller",
   "main": "dist/index.js",
   "scripts": {
-    "build": "echo 'No build needed'",
+    "build": "tsc",
     "start": "tsx src/index.ts",
     "dev": "tsx watch src/index.ts",
     "mock": "tsx watch src/mockServer.ts"
